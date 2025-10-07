@@ -1,0 +1,73 @@
+/*
+=================================================
+  1. Variables de Color (Bootstrap ya usa colores primarios)
+=================================================
+*/
+
+:root {
+  
+  --color-principal: #3498db; /* Blue */
+  --color-secundario: #2c3e50; /* Dark Blue */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  /* Bootstrap se encarga del min-vh-100 y flex */
+}
+
+/*
+=================================================
+  2. Estilos y Animaciones
+=================================================
+*/
+
+/* ANIMACIÓN 1: Transición de color en los botones del Aside */
+/* Bootstrap usa la clase .btn. Aplica la transición a todos los botones */
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+/* ANIMACIÓN 2: Efecto Hover en el botón */
+.btn-outline-light:hover {
+    /* El hover ya lo maneja Bootstrap, solo si quieres un efecto extra: */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ANIMACIÓN 3 (@keyframes) en el título */
+header h1 {
+  /* Asegura que el color inicial de la animación sea el mismo que el final */
+  color: white; 
+  /* Aplica la animación */
+  animation: slideInTitle 1s ease-out;
+}
+
+/* Define la animación del título: aparece desde arriba */
+@keyframes slideInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajuste fino para la barra lateral de Bootstrap */
+aside {
+    min-height: 500px; /* Asegura que aside tenga un buen tamaño */
+}
+
+/* Pie de página con animación simple de entrada */
+footer {
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards; /* 'forwards' mantiene el 100% */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
